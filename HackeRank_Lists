@@ -1,0 +1,20 @@
+if __name__ == '__main__':
+    N = int(input())
+    List = []
+    for i in range(N):
+        comnd = input().split()
+    
+        if comnd[0] == 'insert':
+            List.insert(int(comnd[1]),int(comnd[2]))
+        elif comnd[0] == 'print':
+            print(List)
+        elif comnd[0] == 'remove':
+            List.remove(int(comnd[1]))
+        elif comnd[0] == 'append':
+            List.append(int(comnd[1]))
+        elif comnd[0] == 'sort':
+            List.sort()
+        elif comnd [0]== 'pop':
+            List.pop()
+        elif comnd[0] == 'reverse':
+            List.reverse()
