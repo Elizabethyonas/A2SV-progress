@@ -1,0 +1,9 @@
+class Solution:
+    def addSpaces(self, s: str, spaces: List[int]) -> str:
+        result=[]
+        n=0
+        for i in spaces:
+            result.append(s[n:i])
+            n=i
+        result.append(s[i:])
+        return " ".join(result)
