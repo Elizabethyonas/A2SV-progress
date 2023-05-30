@@ -1,0 +1,19 @@
+class Solution:
+    def findDuplicate(self, paths: List[str]) -> List[List[str]]:
+        mapping = defaultdict(list)
+        for path in paths:
+            path = path.split(' ')
+            folder = path[0]
+            for strings in path[1:]:
+                strings = strings.split(".txt")
+                name = strings[0]
+                content = strings[1]
+                mapping[content].append((folder , name))
+        finalOutput = []
+        for k,v in mapping.items():
+            if len(v) > 1:
+                temp = []
+                for path, name in v:
+                    temp.append(path + '/' + name + '.txt')
+                finalOutput.append(temp)
+        return finalOutput
