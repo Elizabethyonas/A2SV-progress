@@ -1,0 +1,13 @@
+t = int(input()) # read the number of test cases
+for i in range(t):
+    n = int(input()) # read the length of the array
+    a = list(map(int, input().split())) # read the array
+    # sort the array in non-decreasing order
+    a.sort()
+    # loop through the array and check if the difference between adjacent elements is greater than 1
+    for j in range(1, n):
+        if a[j] - a[j-1] > 1:
+            print("NO")
+            break
+    else:
+        print("YES")
