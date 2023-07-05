@@ -1,0 +1,23 @@
+import bisect
+ 
+n, p = map(int, input().split())
+a = list(map(int, input().split()))
+ 
+a.sort()
+ 
+left = 1
+right = a[-1]
+ 
+while left <= right:
+    mid = (left + right) // 2
+    count = bisect.bisect_right(a, mid)
+    if count == p:
+        print(mid)
+        break
+    elif count < p:
+        left = mid + 1
+    else:
+        right = mid - 1
+ 
+if left > right:
+    print(-1)
