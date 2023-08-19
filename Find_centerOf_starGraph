@@ -1,0 +1,20 @@
+class Solution:
+    def findCenter(self, edges: List[List[int]]) -> int:
+        d = {}
+        n = len(edges)
+        for edge in edges:
+            if edge[0] not in d:
+                d[edge[0]] = 1
+            else:
+                d[edge[0]] += 1
+            if d[edge[0]] == 2:
+                return edge[0]
+            
+            if edge[1] not in d:
+                d[edge[1]] = 1
+            else:
+                d[edge[1]] += 1
+            if d[edge[1]] == 2:
+                return edge[1]
+            
+        return -1
