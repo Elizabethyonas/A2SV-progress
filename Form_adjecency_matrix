@@ -1,0 +1,26 @@
+def adjacency_matrix_to_list(adj_matrix):
+    n = len(adj_matrix)
+    adj_list = [[] for _ in range(n)]
+
+    for i in range(n):
+        edges = []
+        for j in range(n):
+            if adj_matrix[i][j] == 1:
+                edges.append(j+1)  
+        adj_list[i] = edges
+
+    return adj_list
+
+
+
+n = int(input())
+adj_matrix = []
+for _ in range(n):
+    adj_matrix.append(list(map(int, input().split())))
+
+adj_list = adjacency_matrix_to_list(adj_matrix)
+
+for i in range(n):
+    edges = adj_list[i]
+    print(len(edges), end=' ')
+    print(*edges)
