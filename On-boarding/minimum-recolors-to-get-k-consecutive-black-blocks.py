@@ -1,9 +1,11 @@
 class Solution:
     def minimumRecolors(self, blocks: str, k: int) -> int:
-        min_op=k
-        for i in range(len(blocks)):
-            count=blocks[i:i+k].count("B")
-            if count>k:
-                return 0
-            min_op=min(min_op,k-count)
-        return min_op
+        left=0
+        right=k
+        minop=float('inf')
+        while right<=len(blocks):
+            cnt=blocks[left:right].count("W")
+            minop=min(minop,cnt)
+            left+=1
+            right+=1
+        return minop if minop!=float('inf') else 0
