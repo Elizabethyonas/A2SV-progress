@@ -9,8 +9,9 @@ class BrowserHistory:
         self.curr = LinkedList(homepage)
 
     def visit(self, url: str) -> None:
-        self.curr.next = LinkedList(url, self.curr)
-        self.curr = self.curr.next 
+        new_node = LinkedList(url, self.curr)
+        self.curr.next = new_node
+        self.curr = new_node
 
     def back(self, steps: int) -> str:
         while self.curr.prev and steps > 0:
