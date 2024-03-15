@@ -15,4 +15,4 @@ class Solution:
                 ans = min(ans, mid)
             else:
                 low = mid + 1
-        return ans
+        return ans  
